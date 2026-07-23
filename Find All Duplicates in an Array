@@ -12,7 +12,7 @@ public:
         vector<int> result;
         for(auto &it: freq){
             if(it.second > 1) result.push_back(it.first);
-        }
+        } 
 
         return result;
     }
