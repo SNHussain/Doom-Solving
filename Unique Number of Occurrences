@@ -1,0 +1,26 @@
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+        int n = arr.size();
+
+        unordered_map<int , int> freq;
+
+        for(int num: arr){
+            freq[num]++;
+        }
+
+        vector<int> vec;
+
+        for(auto &it: freq){
+            vec.push_back(it.second);
+        }
+
+        sort(vec.begin(), vec.end());
+
+        for(int i=1; i<vec.size(); i++){
+            if(vec[i-1] == vec[i]) return false;
+        }
+
+        return true;
+    }
+};
